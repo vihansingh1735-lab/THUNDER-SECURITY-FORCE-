@@ -43,7 +43,7 @@
             100% { background-position: 0% 50%; }
         }
 
-        /* === RGB PRELOADER === */
+        /* === BLACK & BLUE PRELOADER === */
         .preloader {
             position: fixed;
             top: 0;
@@ -63,7 +63,7 @@
             pointer-events: none;
         }
 
-        .rgb-circle {
+        .blue-loader {
             width: 150px;
             height: 150px;
             position: relative;
@@ -72,7 +72,7 @@
             align-items: center;
         }
 
-        .circle {
+        .loader-circle {
             position: absolute;
             width: 100%;
             height: 100%;
@@ -81,28 +81,28 @@
             animation: rotate 2s linear infinite;
         }
 
-        .circle:nth-child(1) {
-            border-top: 5px solid #ff0000;
+        .loader-circle:nth-child(1) {
+            border-top: 5px solid #0a0a0a;
             animation-delay: 0.1s;
         }
 
-        .circle:nth-child(2) {
-            border-top: 5px solid #00ff00;
+        .loader-circle:nth-child(2) {
+            border-top: 5px solid #0066ff;
             animation-delay: 0.2s;
         }
 
-        .circle:nth-child(3) {
-            border-top: 5px solid #0000ff;
+        .loader-circle:nth-child(3) {
+            border-top: 5px solid #00a8ff;
             animation-delay: 0.3s;
         }
 
-        .circle:nth-child(4) {
-            border-top: 5px solid #ffff00;
+        .loader-circle:nth-child(4) {
+            border-top: 5px solid #0a0a0a;
             animation-delay: 0.4s;
         }
 
-        .circle:nth-child(5) {
-            border-top: 5px solid #ff00ff;
+        .loader-circle:nth-child(5) {
+            border-top: 5px solid #0066ff;
             animation-delay: 0.5s;
         }
 
@@ -116,16 +116,16 @@
             font-size: 2.5rem;
             font-weight: 900;
             font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(45deg, #ff0000, #00ff00, #0000ff);
+            background: linear-gradient(45deg, #0066ff, #00a8ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            animation: colorShift 3s infinite alternate;
+            animation: blueGlow 2s ease-in-out infinite alternate;
         }
 
-        @keyframes colorShift {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
+        @keyframes blueGlow {
+            from { text-shadow: 0 0 10px #0066ff; }
+            to { text-shadow: 0 0 30px #00a8ff; }
         }
 
         /* === HEADER === */
@@ -149,7 +149,7 @@
             font-size: 2.5rem;
             font-weight: 900;
             font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(45deg, #00a8ff, #9c88ff);
+            background: linear-gradient(45deg, #00a8ff, #0066ff);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -189,7 +189,7 @@
         }
 
         .nav-btn.active {
-            background: linear-gradient(45deg, #00a8ff, #9c88ff);
+            background: linear-gradient(45deg, #00a8ff, #0066ff);
             color: white;
             border-color: transparent;
         }
@@ -231,7 +231,7 @@
         }
 
         .force {
-            color: #9c88ff;
+            color: #0066ff;
             animation: forceWave 3s ease-in-out infinite;
         }
 
@@ -259,10 +259,10 @@
             margin-bottom: 40px;
         }
 
-        /* === UPDATED JOIN BUTTON COLOR === */
+        /* === JOIN BUTTON === */
         .join-tsf-btn {
             display: inline-block;
-            background: linear-gradient(45deg, #ff6b6b, #ffa726);
+            background: linear-gradient(45deg, #0066ff, #00a8ff);
             color: white;
             padding: 18px 45px;
             border-radius: 50px;
@@ -273,7 +273,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+            box-shadow: 0 10px 20px rgba(0, 102, 255, 0.3);
             position: relative;
             overflow: hidden;
             z-index: 1;
@@ -281,50 +281,27 @@
 
         .join-tsf-btn:hover {
             transform: scale(1.1);
-            box-shadow: 0 15px 30px rgba(255, 107, 107, 0.5);
+            box-shadow: 0 15px 30px rgba(0, 102, 255, 0.5);
         }
 
-        .join-tsf-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-            z-index: -1;
-        }
-
-        .join-tsf-btn:hover::before {
-            left: 100%;
-        }
-
-        /* === UPDATED EST. 2025 BADGE COLOR === */
+        /* === EST. 2025 BADGE === */
         .year-badge {
             display: inline-block;
-            background: linear-gradient(45deg, #00ff88, #00e5ff);
-            color: #0a0a0a;
+            background: linear-gradient(45deg, #0066ff, #00a8ff);
+            color: white;
             padding: 10px 25px;
             border-radius: 30px;
             font-weight: 900;
             font-size: 1.3rem;
             margin-top: 30px;
             letter-spacing: 2px;
-            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
             animation: badgeGlow 2s ease-in-out infinite alternate;
-            border: 2px solid transparent;
         }
 
         @keyframes badgeGlow {
-            0% {
-                box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
-                transform: scale(1);
-            }
-            100% {
-                box-shadow: 0 5px 25px rgba(0, 255, 136, 0.6);
-                transform: scale(1.05);
-            }
+            0% { box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3); transform: scale(1); }
+            100% { box-shadow: 0 5px 25px rgba(0, 102, 255, 0.6); transform: scale(1.05); }
         }
 
         /* === GALLERY SLIDER === */
@@ -453,7 +430,7 @@
             width: 120px;
             height: 120px;
             border-radius: 50%;
-            background: linear-gradient(45deg, #00a8ff, #9c88ff);
+            background: linear-gradient(45deg, #00a8ff, #0066ff);
             margin: 0 auto 20px;
             display: flex;
             align-items: center;
@@ -461,19 +438,6 @@
             font-size: 2.5rem;
             color: white;
             font-weight: bold;
-        }
-
-        .member-name {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: #00a8ff;
-        }
-
-        .member-status {
-            color: #00ff88;
-            font-weight: 600;
-            margin-bottom: 15px;
         }
 
         /* === DISCORD SECTION === */
@@ -495,12 +459,6 @@
         .discord-icon {
             font-size: 4rem;
             color: #5865F2;
-            margin-bottom: 20px;
-        }
-
-        .discord-title {
-            font-size: 2.5rem;
-            color: white;
             margin-bottom: 20px;
         }
 
@@ -556,7 +514,7 @@
         .ally-logo {
             flex: 0 0 200px;
             height: 150px;
-            background: linear-gradient(45deg, #00a8ff, #9c88ff);
+            background: linear-gradient(45deg, #00a8ff, #0066ff);
             border-radius: 15px;
             display: flex;
             align-items: center;
@@ -713,14 +671,14 @@
     <!-- === ANIMATED BACKGROUND === -->
     <div class="animated-bg"></div>
     
-    <!-- === RGB PRELOADER === -->
+    <!-- === BLACK & BLUE PRELOADER === -->
     <div class="preloader" id="preloader">
-        <div class="rgb-circle">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
+        <div class="blue-loader">
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
+            <div class="loader-circle"></div>
             <div class="tsf-center">TSF</div>
         </div>
     </div>
@@ -737,7 +695,7 @@
             <a href="#members" class="nav-btn">
                 <i class="fas fa-users"></i> MEMBERS
             </a>
-            <a href="https://discord.gg/yDepAgAX" target="_blank" class="nav-btn">
+            <a href="#discord" class="nav-btn">
                 <i class="fab fa-discord"></i> DISCORD SERVER
             </a>
             <a href="#allies" class="nav-btn">
@@ -762,7 +720,7 @@
         <a href="#members" class="nav-btn" onclick="toggleMobileMenu()">
             <i class="fas fa-users"></i> MEMBERS
         </a>
-        <a href="https://discord.gg/yDepAgAX" target="_blank" class="nav-btn" onclick="toggleMobileMenu()">
+        <a href="#discord" class="nav-btn" onclick="toggleMobileMenu()">
             <i class="fab fa-discord"></i> DISCORD SERVER
         </a>
         <a href="#allies" class="nav-btn" onclick="toggleMobileMenu()">
@@ -782,12 +740,11 @@
         </h1>
         <p class="tagline">PROTECTION • UNITY • EXCELLENCE</p>
         
-        <!-- UPDATED: Join TSF Button with new color (Red-Orange Gradient) -->
-        <a href="https://discord.gg/CkZca7yt" target="_blank" class="join-tsf-btn">
+        <!-- Join TSF Button -->
+        <a href=https://discord.gg/E2UtdWTf"#" target="_blank" class="join-tsf-btn">
             <i class="fas fa-shield-alt"></i> JOIN THUNDER SECURITY FORCE
         </a>
         
-        <!-- UPDATED: EST. 2025 Badge with new color (Green-Blue Gradient) -->
         <div class="year-badge">EST. 2025</div>
     </section>
     
@@ -799,7 +756,7 @@
             <div class="slides-container" id="gallerySlides">
                 <!-- Slide 1 -->
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    <img src="https://i.ibb.co/HLHZWDyX/file-00000000c1587207863e30e4c6fb968f.png" 
                          alt="TSF Operations">
                     <div class="slide-content">
                         <h3>OPERATION THUNDER</h3>
@@ -809,7 +766,7 @@
                 
                 <!-- Slide 2 -->
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    <img src="https://i.ibb.co/NnykwvwC/Snapchat-1298574778.jpg" 
                          alt="Team Briefing">
                     <div class="slide-content">
                         <h3>STRATEGY BRIEFING</h3>
@@ -819,7 +776,7 @@
                 
                 <!-- Slide 3 -->
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1518609878373-06d740f60d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    <img src="https://i.ibb.co/TBPZwJSD/Snapchat-778316613.jpg" 
                          alt="Training Session">
                     <div class="slide-content">
                         <h3>TRAINING EXERCISE</h3>
@@ -829,7 +786,7 @@
                 
                 <!-- Slide 4 -->
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
+                    <img src="https://i.ibb.co/SXdvj2TV/Snapchat-531873769.jpg" 
                          alt="Alliance Meeting">
                     <div class="slide-content">
                         <h3>ALLIANCE SUMMIT</h3>
@@ -839,11 +796,12 @@
                 
                 <!-- Slide 5 -->
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1542744095-fcf48d80b0fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" 
-                         alt="Equipment Showcase">
+                    <img src="https://i.ibb.co/TM8xhJk7/Snapchat-659489024.jpg" 
+                         alt="E
+                         Power Showcase">
                     <div class="slide-content">
-                        <h3>TECHNOLOGY SHOWCASE</h3>
-                        <p>Latest security equipment and gear</p>
+                        <h3>KILLING DEAD GANG PLAYERS</h3>
+                        <p>COOKED</p>
                     </div>
                 </div>
             </div>
@@ -873,22 +831,22 @@
         <div class="members-grid">
             <div class="member-card">
                 <div class="member-avatar">COMING<br>SOON</div>
-                <h3 class="member-name">POSITION FILLING</h3>
-                <div class="member-status">RECRUITMENT OPEN</div>
+                <h3 style="color: #00a8ff; font-size: 1.5rem; margin-bottom: 10px;">POSITION FILLING</h3>
+                <div style="color: #00ff88; font-weight: 600; margin-bottom: 15px;">RECRUITMENT OPEN</div>
                 <p>Applications being reviewed</p>
             </div>
             
             <div class="member-card">
                 <div class="member-avatar">COMING<br>SOON</div>
-                <h3 class="member-name">POSITION FILLING</h3>
-                <div class="member-status">RECRUITMENT OPEN</div>
+                <h3 style="color: #00a8ff; font-size: 1.5rem; margin-bottom: 10px;">POSITION FILLING</h3>
+                <div style="color: #00ff88; font-weight: 600; margin-bottom: 15px;">RECRUITMENT OPEN</div>
                 <p>Applications being reviewed</p>
             </div>
             
             <div class="member-card">
                 <div class="member-avatar">COMING<br>SOON</div>
-                <h3 class="member-name">POSITION FILLING</h3>
-                <div class="member-status">RECRUITMENT OPEN</div>
+                <h3 style="color: #00a8ff; font-size: 1.5rem; margin-bottom: 10px;">POSITION FILLING</h3>
+                <div style="color: #00ff88; font-weight: 600; margin-bottom: 15px;">RECRUITMENT OPEN</div>
                 <p>Applications being reviewed</p>
             </div>
         </div>
@@ -900,12 +858,12 @@
             <div class="discord-icon">
                 <i class="fab fa-discord"></i>
             </div>
-            <h2 class="discord-title">JOIN OUR DISCORD COMMUNITY</h2>
+            <h2 style="font-size: 2.5rem; color: white; margin-bottom: 20px;">JOIN OUR DISCORD COMMUNITY</h2>
             <p style="font-size: 1.2rem; margin-bottom: 30px; color: #cccccc;">
                 Connect with TSF members, receive real-time updates, and be part of our security network
             </p>
             
-            <a href="https://discord.gg/yDepAgAX" target="_blank" class="join-btn">
+            <a href="#" target="_blank" class="join-btn">
                 <i class="fab fa-discord"></i> JOIN DISCORD SERVER
             </a>
         </div>
@@ -919,25 +877,25 @@
             <div class="allies-container" id="alliesContainer">
                 <!-- Slide 1 -->
                 <div class="ally-slide">
-                    <div class="ally-logo"></div>
+                    <div class="ally-logo">9X</div>
                     <div class="ally-info">
-                        <h3 class="ally-name"></h3>
+                        <h3 class="ally-name">9X TEAM</h3>
                         <p style="color: #cccccc; margin-bottom: 20px;">
-                            
-                            
+                            Strategic partnership focusing on mutual security operations and intelligence sharing.
+                            Active collaboration since 2025.
                         </p>
                         <div style="display: flex; gap: 20px;">
-                            <span style="color: #00ff88;">STATUS: </span>
-                            <span style="color: #00a8ff;">SINCE: </span>
+                            <span style="color: #00ff88;">STATUS: ACTIVE</span>
+                            <span style="color: #00a8ff;">SINCE: 2025</span>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Slide 2 -->
                 <div class="ally-slide">
-                    <div class="ally-logo">9X</div>
+                    <div class="ally-logo">LSV</div>
                     <div class="ally-info">
-                        <h3 class="ally-name">9X TEAM</h3>
+                        <h3 class="ally-name">LOS SANTIAGO VIVOS</h3>
                         <p style="color: #cccccc; margin-bottom: 20px;">
                             Specialized in physical security and asset protection. Joint training programs
                             and shared operational protocols.
@@ -951,16 +909,16 @@
                 
                 <!-- Slide 3 -->
                 <div class="ally-slide">
-                    <div class="ally-logo">LSV</div>
+                    <div class="ally-logo"></div>
                     <div class="ally-info">
-                        <h3 class="ally-name">Los Santiago Vivos</h3>
+                        <h3 class="ally-name"></h3>
                         <p style="color: #cccccc; margin-bottom: 20px;">
-                            International security network providing cross-border protection services
-                            and intelligence sharing across multiple regions.
+                            
+                          
                         </p>
                         <div style="display: flex; gap: 20px;">
-                            <span style="color: #00ff88;">STATUS: ACTIVE</span>
-                            <span style="color: #00a8ff;">SINCE 2025</span>
+                            <span style="color: #ff9900;">STATUS: </span>
+                            <span style="color: #00a8ff;"></span>
                         </div>
                     </div>
                 </div>
@@ -1012,7 +970,7 @@
                     Looking to join Thunder Security Force? We're always seeking dedicated
                     individuals who share our values and commitment to security.
                 </p>
-                <a href="https://discord.gg/CkZca7yt" target="_blank" class="join-tsf-btn" style="padding: 12px 30px; font-size: 1rem;">
+                <a href="https://discord.com/channels/1391406050040877097/1452269134602571827" target="_blank" class="join-tsf-btn" style="padding: 12px 30px; font-size: 1rem;">
                     <i class="fas fa-user-plus"></i> APPLY TO JOIN
                 </a>
             </div>
@@ -1026,7 +984,7 @@
         </p>
         <p>© 2025 TSF | ESTABLISHED 2025</p>
         <p style="margin-top: 20px; color: #888; font-size: 0.9rem;">
-            Official website of Thunder Security Force - Professional Security Organization. Website Is Still UnderDevelopment May Contains Some Bugs
+            Official website of Thunder Security Force - Professional Security Organization
         </p>
     </footer>
 
@@ -1132,11 +1090,6 @@
             allySlideIndex++;
             showAllySlide(allySlideIndex);
         }, 6000);
-
-        // === HOW TO ADD IMAGES ===
-        console.log('%c⚡ HOW TO ADD IMAGES ⚡', 'color: #00a8ff; font-size: 18px; font-weight: bold;');
-        console.log('%cReplace image URLs in the Gallery section:', 'color: #9c88ff;');
-        console.log('%c<img src="YOUR_IMAGE_URL_HERE" alt="Description">', 'color: #00ff88; background: #222; padding: 5px;');
     </script>
 </body>
 </html>
